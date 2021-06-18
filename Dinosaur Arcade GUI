@@ -1,0 +1,53 @@
+local library = loadstring(game.HttpGet(game, 'https://pastebin.com/raw/vGwikY93'))()
+
+local w1 = library:Window('Dinosaur Arcade') -- Text
+
+
+w1:Toggle('Item Farm', 'Farm', false, function(toggled)
+    if toggled == true then _G.Items = true
+    while _G.items do
+    wait(1)
+    for i,v in pairs(game.Workspace.Malicious:GetChildren()) do
+    if v.Name == "Item" then
+    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    print("Item Farm executed")
+    end
+    end
+    end
+    end
+end) 
+
+w1:Button("Tp Fern", function()
+    for i,v in pairs(game.Workspace.GameMap.Ferns:GetChildren()) do
+    if v.Name == "Fern" then
+    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    print("Tp Fern executed")
+    end
+    end
+end)
+
+w1:Button("Bring Meat", function()
+    for i,v in pairs(game.Workspace.Malicious:GetChildren()) do
+    if v.Name == "Large_Meat_1"  then
+    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    elseif v.Name == "Large_Meat_2" then
+    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    elseif v.Name == "Medium_Meat_1" then
+    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    elseif v.Name == "Medium_Meat_2" then
+    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    end
+    end
+    print("Tp Meat executed")
+end)
+
+
+w1:Button('Destroy GUI', function()
+    for i,v in pairs(game.CoreGui:GetChildren()) do
+        if v:FindFirstChild('Top') then
+            v:Destroy()    
+        end
+    end
+end) -- Text, Callback
+
+w1:Label('Hypercapsule') -- Text
