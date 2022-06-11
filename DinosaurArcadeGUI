@@ -27,7 +27,7 @@ w1:Button("Tp Fern", function()
 end)
 
 w1:Button("Bring Meat", function()
-    for i,v in pairs(game.Workspace.Malicious:GetChildren()) do
+    for i,v in pairs(game:GetService("Workspace").Malicious.MeatStorage:GetChildren()) do
     if v.Name == "Large_Meat_1"  then
     v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     elseif v.Name == "Large_Meat_2" then
